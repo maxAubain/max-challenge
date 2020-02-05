@@ -2,7 +2,7 @@
 
 ## Challenge description
 ### Part I
-Create a single-page app that displays a map. The map will project an image (provided) as well as some polygons (also provided). The polygons will be projected on top of the image.
+Create a single-page Django app that displays a map. The map will project an image (provided) as well as some polygons (also provided). The polygons will be projected on top of the image.
 
 The final product should look similar to this:
 
@@ -14,7 +14,7 @@ The final product should look similar to this:
 
 ### Part II (Challenge)
 
-You will find that the raster provided is made up of pixels with binary values (0 or 1). 
+You will find that the raster provided is made up of pixels with values between 0 and 1. 
 
 The end goal is to allow a user to be able to click on any of the polygons (represented in blue in the demo picture above). When one of those polygons is clicked on, the user will see (up to you to decide how) the mean value of the raster's pixels located within the confines of the selected polygon. 
 
