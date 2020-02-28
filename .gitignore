@@ -6,3 +6,9 @@
 
 # Asset file too large for github
 /assets/Gopherus_agassizii_connectivity.tif
+
+# VS Code 
+/.vscode
+
+# Dev server cache files
+__pycache__
