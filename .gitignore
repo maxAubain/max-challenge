@@ -9,3 +9,6 @@
 
 # VS Code 
 /.vscode
+
+# Dev server cache files
+__pycache__
