@@ -1,0 +1,8 @@
+# Project documentation
+/_documentation
+
+# MacOS misc.
+.DS_Store
+
+# Asset file too large for github
+/assets/Gopherus_agassizii_connectivity.tif
