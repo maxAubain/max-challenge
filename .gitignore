@@ -11,4 +11,4 @@
 /.vscode
 
 # Python virtual environment
-/env
+/env/
