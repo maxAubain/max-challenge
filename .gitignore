@@ -12,3 +12,6 @@
 
 # Dev server cache files
 __pycache__
+
+# provided images and data
+/_provided_assets
