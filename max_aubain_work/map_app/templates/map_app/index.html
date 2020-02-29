@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src *; connect-src * ws://* wss://*; style-src * 'unsafe-inline' 'unsafe-eval'; media-src * ; img-src * data:; font-src * ; script-src * 'unsafe-inline' 'unsafe-eval';"
+    />
+    <title>Max's Map App with CCI</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'map_app/stylesheet.css' %}"
+    />
+  </head>
+  <body>
+    <div>- This is a map generated in the view with leafletJS.</div>
+    <div>
+      - Baselayer is generated with OpenStreetMap API.
+    </div>
+    <div>
+      - Overlayer is generated using Gopherus_agassizii_connectivity.png.
+    </div>
+    <div>
+      - Shape layer is generated using ClarkGain.zip and the shapefile-js
+      library.
+    </div>
+    <div id="mapid"></div>
+    <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
+    {% load static %}
+    <script src="{% static 'map_app/scripts.js' %}"></script>
+  </body>
+</html>

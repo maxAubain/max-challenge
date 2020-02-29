@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
+# from django.template import loader
 
 # Home page
 def index(request):
-  return HttpResponse("This is the map_app index page.")
+  return render(request, 'map_app/index.html')
