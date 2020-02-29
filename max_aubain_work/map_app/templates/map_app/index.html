@@ -31,11 +31,19 @@
     />
   </head>
   <body>
-    <span
-      >This is an example map from a leaflet tutorial connected to the Open
-      Streetmap API</span
-    >
+    <div>- This is a map generated in the view with leafletJS.</div>
+    <div>
+      - Baselayer is generated with OpenStreetMap API.
+    </div>
+    <div>
+      - Overlayer is generated using Gopherus_agassizii_connectivity.png.
+    </div>
+    <div>
+      - Shape layer is generated using ClarkGain.zip and the shapefile-js
+      library.
+    </div>
     <div id="mapid"></div>
+    <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
     {% load static %}
     <script src="{% static 'map_app/scripts.js' %}"></script>
   </body>
