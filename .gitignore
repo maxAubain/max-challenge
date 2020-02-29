@@ -13,10 +13,5 @@
 # Dev server cache files
 __pycache__
 
-<<<<<<< HEAD
-# provided images and data
-/_provided_assets
-=======
 # Provided data and image files
 /_provided_assets
->>>>>>> de56802e9908196df7384507067eb0c67c899b0d
