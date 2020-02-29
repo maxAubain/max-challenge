@@ -31,10 +31,19 @@
     />
   </head>
   <body>
-    <span
-      >This is an example map from a leaflet tutorial using a baselayer from the
-      OpenStreetMap API</span
-    >
+    <div>- This is a map generated with leafletJS.</div>
+    <div>
+      - The map element, otherwise called a baselayer, is generated with data
+      provided by the OpenStreetMap API. The transparent grey overlay, or layer
+      element, is generated using the gopherus_agassizii_connectivity.png static
+      asset.
+    </div>
+    <div>
+      - The centering of the map view on the baselayer, and the centering of
+      overlay on the same coordinate, is accomplished using geodata extracted
+      from the gopherus_agassizii_connectivity.tif file using the rasterio
+      library CLI commands.
+    </div>
     <div id="mapid"></div>
     {% load static %}
     <script src="{% static 'map_app/scripts.js' %}"></script>
