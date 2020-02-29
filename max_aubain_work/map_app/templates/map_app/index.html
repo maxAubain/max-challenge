@@ -31,20 +31,19 @@
     />
   </head>
   <body>
-    <div>- This is a map generated with leafletJS.</div>
+    <div>- This is a map generated in the view with leafletJS.</div>
     <div>
-      - The map element, otherwise called a baselayer, is generated with data
-      provided by the OpenStreetMap API. The transparent grey overlay, or layer
-      element, is generated using the gopherus_agassizii_connectivity.png static
-      asset.
+      - Baselayer is generated with OpenStreetMap API.
     </div>
     <div>
-      - The centering of the map view on the baselayer, and the centering of
-      overlay on the same coordinate, is accomplished using geodata extracted
-      from the gopherus_agassizii_connectivity.tif file using the rasterio
-      library CLI commands.
+      - Overlayer is generated using Gopherus_agassizii_connectivity.png.
+    </div>
+    <div>
+      - Shape layer is generated using ClarkGain.zip and the shapefile-js
+      library.
     </div>
     <div id="mapid"></div>
+    <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
     {% load static %}
     <script src="{% static 'map_app/scripts.js' %}"></script>
   </body>

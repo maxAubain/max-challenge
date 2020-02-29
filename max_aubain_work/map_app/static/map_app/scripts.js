@@ -18,8 +18,13 @@ L.imageOverlay('/static/map_app/Gopherus_agassizii_connectivity.png',
     zIndex: 1,
   }).addTo(maxMap)
 
+shp('/static/map_app/ClarkGain.zip').then(function (geojson) {
+  L.geoJSON(geojson).addTo(maxMap)
+});
+
 /*
 GeoJSON data extracted from the .tif file using rasterio CLI => `rio bounds Gopherus_agassizii_connectivity.tif --indent 2`
+reference: https://rasterio.readthedocs.io/en/latest/cli.html
 const geoJsonData = {
   "bbox": [
     -118.888883749725,
