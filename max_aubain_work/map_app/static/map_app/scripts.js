@@ -7,9 +7,19 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(maxMap);
 
+L.imageOverlay('/static/map_app/Gopherus_agassizii_connectivity.png',
+  [
+    [32.887232724714, -118.888883749725],
+    [38.173638504074, -112.682962446345]
+  ],
+  {
+    opacity: "0.5",
+    alt: "gopherus-agassizii-connectivity-overlay",
+    zIndex: 1,
+  }).addTo(maxMap)
+
 /*
 GeoJSON data extracted from the .tif file using rasterio CLI => `rio bounds Gopherus_agassizii_connectivity.tif --indent 2`
-
 const geoJsonData = {
   "bbox": [
     -118.888883749725,
