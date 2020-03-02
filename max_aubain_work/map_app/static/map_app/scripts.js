@@ -22,16 +22,26 @@ L.imageOverlay('/static/map_app/Gopherus_agassizii_connectivity.png',
   }).addTo(maxMap)
 
 // Extract and condition shapefile data
+let testArray = []
+for (let i = 0; i < 36; i++) {
+  testArray[i] = i
+}
+
 shp('/static/map_app/ClarkGain.zip').then(function (geoJson) {
+  console.log("geoJson: ", geoJson)
 
   // Add popup onClick of each layer 
+  let i = 0
   L.geoJSON(geoJson, {
     onEachFeature: function (feature, layer) {
       layer.bindPopup(
         `<b><u>Feature properties</u></b> <br/>
         <b>Name</b>: ${feature.properties.Name || "(no name assigned)"} <br/> 
-        <b>Designation</b>: ${feature.properties.designatio || "(no designation assigned)"}`
+        <b>Designation</b>: ${feature.properties.designatio || "(no designation assigned)"} <br/>
+        feature #: ${testArray[i]}`
       );
+      i = i + 1
     }
   }).addTo(maxMap)
+  console.log("L.geoJSON: ", L.geoJSON(geoJson))
 });
