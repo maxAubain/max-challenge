@@ -21,7 +21,7 @@ L.imageOverlay('/static/map_app/Gopherus_agassizii_connectivity.png',
     zIndex: 1,
   }).addTo(maxMap)
 
-// statsArray is obtained using the library `rasterstats`, calculated by `/manual/get_zonal_stats.py`
+// statsArray is obtained using the library `rasterstats`, calculated by `/manual/get_zonal_stats.py
 const statsArray = [
   { "min": -9.749308586120605, "max": -7.081228256225586, "mean": -8.29386705189531, "count": 135677, "median": -8.259998321533203 },
   { "min": -10.020764350891113, "max": -7.2244038581848145, "mean": -8.581563303341902, "count": 21395, "median": -8.493752479553223 },
@@ -33,7 +33,7 @@ const statsArray = [
   { "min": -9.785331726074219, "max": -7.373603820800781, "mean": -8.355192523781671, "count": 129932, "median": -8.285327911376953 },
   { "min": -9.562292098999023, "max": -7.477446556091309, "mean": -8.432207451241874, "count": 53991, "median": -8.367117881774902 },
   { "min": -9.918497085571289, "max": -7.128957748413086, "mean": -8.513817495873615, "count": 127230, "median": -8.435455322265625 },
-  { "min": -3.4028230607370965e+38, "max": -7.3656721115112305, "mean": '-inf', "count": 82607, "median": -8.912172317504883 },
+  { "min": -3.4028230607370965e+38, "max": -7.3656721115112305, "mean": -3.4028230607370965e+38, "count": 82607, "median": -8.912172317504883 },
   { "min": -9.881027221679688, "max": -7.236536026000977, "mean": -8.630992743492923, "count": 69386, "median": -8.619518280029297 },
   { "min": -3.4028230607370965e+38, "max": -6.596883773803711, "mean": -6.819968054388408e+33, "count": 49895, "median": -8.953994750976562 },
   { "min": -9.311820983886719, "max": -7.941429138183594, "mean": -8.542203448735528, "count": 6564, "median": -8.514927864074707 },
@@ -66,12 +66,14 @@ shp('/static/map_app/ClarkGain.zip').then(function (geoJson) {
   let i = 0
   L.geoJSON(geoJson, {
     onEachFeature: function (feature, layer) {
+      let meanVal = statsArray[i].mean.toFixed(3)
+      let medianVal = statsArray[i].median.toFixed(3)
       layer.bindPopup(
         `<b><u>Feature properties</u></b> <br/>
         <b>Name</b>: ${feature.properties.Name || "(no name assigned)"} <br/> 
         <b>Designation</b>: ${feature.properties.designatio || "(no designation assigned)"} <br/>
-        <b>Mean Gain</b>: ${statsArray[i].mean} <br/>
-        <b>Median Gain</b>: ${statsArray[i].median} <br/>`
+        <b>Mean Gain</b>: ${meanVal} <br/>
+        <b>Median Gain</b>: ${medianVal} <br/>`
       );
       i = i + 1
     }
